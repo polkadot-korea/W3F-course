@@ -39,7 +39,6 @@ const serveStatic = require('serve-static');
 const spawn = childprocess.spawn;
 const swig = require('swig-templates');
 const url = require('url');
-const ghpages = require('gh-pages');
 
 // DEFAULT_GA is the default Google Analytics tracker ID
 const DEFAULT_GA = 'UA-49880327-14';
@@ -943,11 +942,15 @@ gulp.task('publish:prod:views', (callback) => {
 });
 
 
+
+const ghPages = require('gh-pages');
+
 /**
  * Push build to gh-pages
  */
-gulp.task('deploy', function () {
-  ghpages.publish('build', function(err) {
-    return "gh-pages deployed";
+gulp.task('deploy', function() {
+  ghPages.publish('build', {
+    branch: 'gh-pages',
+    repo: 'https://github.com/polkadot-korea/tools.git'
   });
 });
