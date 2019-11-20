@@ -949,7 +949,7 @@ const ghPages = require('gh-pages');
  * Push build to gh-pages
  */
 gulp.task('deploy', function(callback) {
-  ghPages.publish('build', {
+  ghPages.publish("build", {
     branch: 'gh-pages',
     repo: 'https://github.com/polkadot-korea/tools.git'
   }, callback);
