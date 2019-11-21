@@ -544,7 +544,7 @@ ul, li {
   display: flex;
   align-items: center;
   height: 64px;
-  background-color: #455a64;
+  background-color: #24292e;
   color: #fff;
   padding: 16px;
 }
@@ -572,6 +572,7 @@ ul, li {
 
 #searchbar {
   border-radius: 3px;
+  background-color: #393939;
 }
 
 #searchbar paper-input-container {
@@ -588,12 +589,12 @@ ul, li {
 
 @media (min-width: 768px) {
   #searchbar {
-    background-color: #546E7A;
+    background-color: #393939;
     transition: background-color 400ms cubic-bezier(0, 0, 0.2, 1);
     width: 100%;
   }
   #searchbar:hover {
-    background-color: #78909C;
+    background-color: #ff1864;
   }
   .logo-devs {
     margin: 5px 32px 0 0;

@@ -947,7 +947,6 @@ require('dotenv').config();
 
 
 gulp.task('publish:gh-pages', (callback) => {
-  gulp.task('build');
   ghPages.publish("build", {
     branch: "gh-pages",
     repo: "https://github.com/polkadot-korea/W3F-course.git"
