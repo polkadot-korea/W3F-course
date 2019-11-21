@@ -940,3 +940,10 @@ gulp.task('publish:prod:views', (callback) => {
   const opts = { exclude: CODELABS_NAMESPACE, dry: DRY_RUN, deleteMissing: DELETE_MISSING };
   gcs.rsync(STAGING_BUCKET, PROD_BUCKET, opts, callback);
 });
+
+const ghPages = require('gh-pages')
+
+gulp.task('deploy', (callback) => {
+  const opts = { dry: DRY_RUN, deleteMissing: DELETE_MISSING };
+  ghPages.publish('build', callback);
+})
