@@ -941,16 +941,9 @@ gulp.task('publish:prod:views', (callback) => {
   gcs.rsync(STAGING_BUCKET, PROD_BUCKET, opts, callback);
 });
 
+const ghPages = require('gh-pages')
 
-
-const ghPages = require('gh-pages');
-
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', function(callback) {
-  ghPages.publish("build", {
-    branch: 'gh-pages',
-    repo: 'https://github.com/polkadot-korea/tools.git'
-  }, callback);
-});
+gulp.task('publish:gh-pages', (callback) => {
+  const opts = { dry: DRY_RUN, deleteMissing: DELETE_MISSING };
+  ghPages.publish('build', callback);
+})
