@@ -941,9 +941,19 @@ gulp.task('publish:prod:views', (callback) => {
   gcs.rsync(STAGING_BUCKET, PROD_BUCKET, opts, callback);
 });
 
-const ghPages = require('gh-pages')
+const ghPages = require('gh-pages');
+const https = require('https');
+require('dotenv').config();
 
-gulp.task('deploy', (callback) => {
-  const opts = { dry: DRY_RUN, deleteMissing: DELETE_MISSING };
-  ghPages.publish('build', callback);
+
+gulp.task('publish:gh-pages', (callback) => {
+  ghPages.publish("build", {
+    branch: "gh-pages",
+    repo: "https://github.com/polkadot-korea/W3F-course.git"
+  }).then(buildHook())
+  .then(callback());
 })
+
+const buildHook = () => {
+  https.get(`https://api.netlify.com/build_hooks/${process.env.BUILD_HOOK}`);
+}
