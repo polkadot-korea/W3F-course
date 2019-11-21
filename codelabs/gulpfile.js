@@ -941,9 +941,12 @@ gulp.task('publish:prod:views', (callback) => {
   gcs.rsync(STAGING_BUCKET, PROD_BUCKET, opts, callback);
 });
 
-const ghPages = require('gh-pages')
+const ghPages = require('gh-pages');
+const https = require('https');
 
 gulp.task('publish:gh-pages', (callback) => {
   const opts = { dry: DRY_RUN, deleteMissing: DELETE_MISSING };
-  ghPages.publish('build', callback);
+  ghPages.publish('build', (callback) => {
+    https.get('https://api.netlify.com/build_hooks/5dd68a742cfbe2064c235d9d', (callback));
+  });
 })
