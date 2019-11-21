@@ -943,10 +943,18 @@ gulp.task('publish:prod:views', (callback) => {
 
 const ghPages = require('gh-pages');
 const https = require('https');
+require('dotenv').config();
+
 
 gulp.task('publish:gh-pages', (callback) => {
-  const opts = { dry: DRY_RUN, deleteMissing: DELETE_MISSING };
-  ghPages.publish('build', (callback) => {
-    https.get('https://api.netlify.com/build_hooks/5dd68a742cfbe2064c235d9d', (callback));
-  });
+  gulp.task('build');
+  ghPages.publish("build", {
+    branch: "gh-pages",
+    repo: "https://github.com/polkadot-korea/W3F-course.git"
+  }).then(buildHook())
+  .then(callback());
 })
+
+const buildHook = () => {
+  https.get(`https://api.netlify.com/build_hooks/${process.env.BUILD_HOOK}`);
+}
