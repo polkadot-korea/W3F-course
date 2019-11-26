@@ -1,0 +1,10 @@
+{
+  "title": "Korea University",
+  "description": "고려대 블록체인센터에서 주관하는 웹3.0 블록체인 MOOC입니다. 고려대와 W3F, 패리티 엔지니어들이 함께 만든 코드랩들을 무료로 체험해보세요!", 
+  "logoUrl": "/koreauni/koreauni-logo.jpg",
+  "tags": ["koreauni"],
+  "exclude": [
+    ".*-about$",
+    "^lang-.*"
+  ]
+}
