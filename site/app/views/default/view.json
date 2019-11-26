@@ -1,13 +1,13 @@
 {
-  "title": "Codelabs",
-  "description": "Codelabs provide a guided, tutorial, hands-on coding experience. Most codelabs will step you through the process of building a small application, or adding a new feature to an existing application.",
+  "title": "Web3.0 코드랩",
+  "description": "이 코드랩은 폴카닷과 서브스트레이트를 이용하여 Web3.0을 만들기 위한 모든 과정을 다룹니다. 폴카닷과 서브스트레이트를 개발할 떼 쓰이는 프로그래밍 언어인 러스트를 배워보고 나만의 블록체인을 만든 뒤 메인넷을 세상에 배포해보세요.",
   "tags": [],
   "categories": [],
   "exclude": [
     "^lang-.*"
   ],
-  "logoUrl": "/images/logo.png",
-  "toolbarBgColor": "#37474F",
+  "logoUrl": "/images/logo.svg",
+  "toolbarBgColor": "#000000"",
   "sort": "mainCategory",
   "pins": []
 }
