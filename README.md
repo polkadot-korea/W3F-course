@@ -5,7 +5,7 @@ W3f course for collaboration between Korea University
 # Install
 
 ```bash
-git clone 
+git clone https://github.com/polkadot-korea/W3F-course.git
 ```
 
 
